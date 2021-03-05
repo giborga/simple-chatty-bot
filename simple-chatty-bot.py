@@ -1,12 +1,12 @@
 def greet(bot_name, birth_year):
-    print('Hello! My name is ' + bot_name + '.')
-    print('I was created in ' + birth_year + '.')
+    print(f'Hello! My name is {bot_name}.')
+    print(f'I was created in {birth_year}.')
 
 
 def remind_name():
     print('Please, remind me your name.')
     name = input()
-    print('What a great name you have, ' + name + '!')
+    print(f'What a great name you have {name}!')
 
 
 def guess_age():
@@ -18,7 +18,7 @@ def guess_age():
     rem7 = int(input())
     age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
 
-    print("Your age is " + str(age) + "; that's a good time to start programming!")
+    print(f"Your age is {str(age)}; that's a good time to start programming!")
 
 
 def count():
@@ -49,8 +49,10 @@ def test():
 def end():
     print('Congratulations, have a nice day!')
 
+user_name = input("> ")
+user_year = input("> ")
 
-greet('Gibo', '2021')  # change it as you need
+greet(user_name, user_year)  # change it as you need
 remind_name()
 guess_age()
 count()
