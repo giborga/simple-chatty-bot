@@ -5,26 +5,27 @@ def greet(bot_name, birth_year):
 
 def remind_name():
     print('Please, remind me your name.')
-    name = input()
+    name = input('> ')
     print(f'What a great name you have {name}!')
 
 
 def guess_age():
     print('Let me guess your age.')
     print('Enter remainders of dividing your age by 3, 5 and 7.')
-
-    rem3 = int(input())
-    rem5 = int(input())
-    rem7 = int(input())
+    print("The first remainder:")
+    rem3 = int(input('> '))
+    print("The second remainder:")
+    rem5 = int(input('> '))
+    print("The first remainder:")
+    rem7 = int(input('> '))
     age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
-
-    print(f"Your age is {str(age)}; that's a good time to start programming!")
+    print(f'Your age is {str(age)}; that\'s a good time to start programming!')
 
 
 def count():
     print('Now I will prove to you that I can count to any number you want.')
-
-    num = int(input())
+    print('Enter any positive integer:')
+    num = int(input('> '))
     curr = 0
     while curr <= num:
         print(curr, '!')
@@ -38,23 +39,28 @@ def test():
     print("2. To decompose a program into several small subroutines.")
     print("3. To determine the execution time of a program.")
     print("4. To interrupt the execution of a program.")
-
-    x = int(input("> "))
+    print("Please, enter your answer:")
+    x = int(input('> '))
     while x != 2:
         print('Please, try again.')
         x = int(input("> "))
         if x == 2:
-            print('Completed, have a nice day!')
+            print('Congratulations!')
 
 def end():
-    print('Congratulations, have a nice day!')
+    print('Have a nice day!')
 
-user_name = input("> ")
-user_year = input("> ")
+def main():
+    print('Please, enter your bot\'s name:')
+    bot_name = input("> ")
+    print('And the current year:')
+    birth_year = input("> ")
+    greet(bot_name, birth_year)  # change it as you need
+    remind_name()
+    guess_age()
+    count()
+    test()
+    end()
 
-greet(user_name, user_year)  # change it as you need
-remind_name()
-guess_age()
-count()
-test()
-end()
+if __name__ == '__main__':
+    main()
